@@ -1,4 +1,4 @@
-# Technical Interview Challenge 1
+# Technical Interview Challenge 2
 
 ## Installation
 
