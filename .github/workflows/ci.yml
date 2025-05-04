@@ -1,0 +1,33 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - '**'  # Run on push to any branch
+
+jobs:
+  ci_checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: mbstring, opcache, pdo, pdo_pgsql, redis
+          coverage: xdebug
+
+      - name: Install Composer
+        run: |
+          curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+      - name: Install dependencies
+        working-directory: src/myapp
+        run: composer install --no-interaction --optimize-autoloader
+
+      - name: Run CI checks
+        working-directory: src/myapp
+        run: composer ci:checks
