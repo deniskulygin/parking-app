@@ -28,7 +28,6 @@ class ParkingLot extends AbstractModel
     protected function init(): void
     {
         $this->table = self::TABLE_NAME;
-        $this->dateFormat = 'U';
         $this->casts = [
             'is_available' => 'boolean',
             'created_at' => 'timestamp',

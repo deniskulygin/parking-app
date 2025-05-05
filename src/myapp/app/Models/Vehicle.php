@@ -22,7 +22,6 @@ class Vehicle extends AbstractModel
     protected function init(): void
     {
         $this->table = self::TABLE_NAME;
-        $this->dateFormat = 'U';
         $this->casts = [
             'created_at' => 'timestamp',
             'updated_at' => 'timestamp',

@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('parking_spots', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('unique_id', 40)->unique()->nullable(false);
+            $table->char('unique_id', 36)->unique()->nullable(false);
             $table->unsignedBigInteger('parking_lot_id');
             $table->boolean('is_occupied')->default(false);
             $table->timestamps();

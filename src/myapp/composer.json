@@ -55,6 +55,7 @@
         "sniff:fix": "php vendor/bin/phpcbf --standard=PSR12 --ignore=vendor/* -n -p . --extensions=php",
         "sniff:baseline": "php vendor/bin/phpcs tests --report=\\\\DR\\\\CodeSnifferBaseline\\\\Reports\\\\Baseline --standard=PSR12 --ignore=vendor/* -n -p . --extensions=php  --report-file=phpcs.baseline.xml --basepath=.",
         "test:stan": "php vendor/bin/phpstan analyse --level max --memory-limit=1G app -c phpstan.neon",
+        "stan:baseline": "php vendor/bin/phpstan analyse --level max --memory-limit=1G app -c phpstan.neon --generate-baseline",
         "ci:checks": [
             "@sniff",
             "@test:all",

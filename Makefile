@@ -14,6 +14,9 @@ install: up
 migrate:
 	docker-compose exec $(SERVICE_NAME) php artisan migrate
 
+seed:
+	docker-compose exec $(SERVICE_NAME) php artisan db:seed
+
 down:
 	docker-compose down
 
@@ -37,3 +40,6 @@ sniff:
 
 sniff-fix:
 	docker-compose exec $(SERVICE_NAME) composer sniff:fix
+
+sniff-baseline:
+	docker-compose exec $(SERVICE_NAME) composer sniff:baseline

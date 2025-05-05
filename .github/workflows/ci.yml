@@ -6,7 +6,7 @@ on:
       - '**'  # Run on push to any branch
 
 jobs:
-  ci_checks:
+  static_checks:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +28,6 @@ jobs:
         working-directory: src/myapp
         run: composer install --no-interaction --optimize-autoloader
 
-      - name: Run CI checks
+      - name: Run static checks
         working-directory: src/myapp
         run: composer ci:checks

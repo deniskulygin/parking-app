@@ -10,7 +10,7 @@ namespace App\Models;
  * @method $this setUniqueId(string $uniqueId)
  * @method int getParkingLotId()
  * @method $this setParkingLotId(int $id)
- * @method bool isOccupied()
+ * @method bool getIsOccupied()
  * @method $this setIsOccupied(bool $status)
  * @method int getCreatedAt()
  * @method $this setCreatedAt(int $timestamp)
@@ -24,7 +24,6 @@ class ParkingSpot extends AbstractModel
     protected function init(): void
     {
         $this->table = self::TABLE_NAME;
-        $this->dateFormat = 'U';
         $this->casts = [
             'is_occupied' => 'boolean',
             'created_at' => 'timestamp',

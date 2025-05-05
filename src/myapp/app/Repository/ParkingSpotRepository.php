@@ -10,11 +10,11 @@ class ParkingSpotRepository extends BaseRepository
     /**
      * @return ParkingSpot|Model|null
      */
-    public function findByUniqueId(string $teamUid): ?ParkingSpot
+    public function findByUniqueId(string $parkingSpotUuid): ?ParkingSpot
     {
         return $this->getModel()
             ->newQuery()
-            ->where('unique_id', '=', $teamUid)
+            ->where('unique_id', '=', $parkingSpotUuid)
             ->first();
     }
 }

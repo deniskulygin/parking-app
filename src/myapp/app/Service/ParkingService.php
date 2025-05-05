@@ -33,12 +33,12 @@ class ParkingService
         $vehicle->getConnection()->beginTransaction();
         try {
             /** @var ParkingSpot $lockedSpot */
-            $lockedSpot = ParkingSpot::newQuery()
+            $lockedSpot = ParkingSpot::query()
                 ->where('id', $spot->getId())
                 ->lockForUpdate()
                 ->first();
 
-            if ($lockedSpot->isOccupied()) {
+            if ($lockedSpot->getIsOccupied()) {
                 throw new ApiException("Parking spot already occupied");
             }
 
@@ -53,6 +53,10 @@ class ParkingService
             $vehicle->getConnection()->commit();
 
             return $parking;
+        } catch (ApiException $exception) {
+            $vehicle->getConnection()->rollBack();
+
+            throw $exception;
         } catch (\Throwable) {
             $vehicle->getConnection()->rollBack();
 
@@ -70,12 +74,12 @@ class ParkingService
         $spot->getConnection()->beginTransaction();
         try {
             /** @var ParkingSpot $lockedSpot */
-            $lockedSpot = ParkingSpot::newQuery()
+            $lockedSpot = ParkingSpot::query()
                 ->where('id', $spot->getId())
                 ->lockForUpdate()
                 ->first();
 
-            if (false === $lockedSpot->isOccupied()) {
+            if (false === $lockedSpot->getIsOccupied()) {
                 return;
             }
 

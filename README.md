@@ -29,6 +29,7 @@ make migrate
 | `make restart`   | Restart containers                          |
 | `make install`   | Start containers and run Composer install   |
 | `make migrate`   | Run Laravel database migrations             |
+| `make seed`      | Run Laravel database seeders                |
 | `make bash`      | Open a Bash shell in the app container      |
 | `make ci-checks` | Run all CI checks (PHPStan, PHPCS, PHPUnit) |
 | `make test-all`  | Run PHPUnit tests with coverage             |

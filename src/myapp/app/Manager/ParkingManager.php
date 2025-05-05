@@ -32,7 +32,7 @@ class ParkingManager
      */
     public function unpark(Parking $parking): void
     {
-        $parking->setUnparked(true)->save();
+        $parking->setParked(false)->save();
     }
 
     /**

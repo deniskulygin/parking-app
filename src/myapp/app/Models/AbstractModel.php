@@ -6,7 +6,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Ramsey\Uuid\Uuid;
 
 abstract class AbstractModel extends Model
 {
@@ -45,7 +44,7 @@ abstract class AbstractModel extends Model
      */
     protected function generateUniqueString(): string
     {
-        return str_replace('-', '', Uuid::uuid4()->toString()) . strtolower(bin2hex(random_bytes(4)));
+        return Str::uuid()->toString();
     }
 
     public function getId(): int

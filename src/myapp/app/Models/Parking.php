@@ -12,8 +12,8 @@ namespace App\Models;
  * @method $this setVehicleId(int $id)
  * @method int getParkingSpotId()
  * @method $this setParkingSpotId(int $id)
- * @method bool isUnparked()
- * @method $this setUnparked(bool $status)
+ * @method bool isParked()
+ * @method $this setParked(bool $status)
  * @method int getCreatedAt()
  * @method $this setCreatedAt(int $timestamp)
  * @method int|null getUpdatedAt()
@@ -26,7 +26,6 @@ class Parking extends AbstractModel
     protected function init(): void
     {
         $this->table = self::TABLE_NAME;
-        $this->dateFormat = 'U';
         $this->casts = [
             'unparked' => 'boolean',
             'created_at' => 'timestamp',

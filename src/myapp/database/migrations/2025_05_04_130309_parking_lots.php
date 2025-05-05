@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('parking_lots', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('unique_id', 40)->unique()->nullable(false);
+            $table->char('unique_id', 36)->unique()->nullable(false);
             $table->string('name');
             $table->boolean('is_available')->default(true);
             $table->timestamps();

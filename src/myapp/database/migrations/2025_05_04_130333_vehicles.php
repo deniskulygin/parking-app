@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('unique_id', 40)->unique()->nullable(false);
+            $table->char('unique_id', 36)->unique()->nullable(false);
             $table->unsignedTinyInteger('type');
             $table->timestamps();
         });

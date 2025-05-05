@@ -275,9 +275,3 @@ parameters:
 			identifier: argument.type
 			count: 1
 			path: app/Service/ParkingService.php
-
-		-
-			message: '#^Static call to instance method Illuminate\\Database\\Eloquent\\Model\:\:newQuery\(\)\.$#'
-			identifier: method.staticCall
-			count: 2
-			path: app/Service/ParkingService.php

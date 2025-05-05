@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\GetParkingLotController;
+use App\Http\Controllers\ParkVehicleController;
+use App\Http\Controllers\UnparkVehicleController;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -10,7 +13,7 @@ use Illuminate\Support\Facades\RateLimiter;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    private const UNIQUE_ID_PATTERN = '[a-z0-9]{40}';
+    private const UNIQUE_ID_PATTERN = '[0-9a-fA-F\-]{36}';
     public const HOME = '/home';
 
     public function boot(): void
@@ -38,15 +41,12 @@ class RouteServiceProvider extends ServiceProvider
 
     private function mapRoutes(Router $router): void
     {
-        /** @uses  \App\Http\Controllers\ParkVehicleController::__invoke */
-        $router->post('/parking-spots/{parkingSpotUuid}/parkings', 'ParkVehicleController')
+        $router->post('/parking-spots/{parkingSpotUuid}/parkings', ParkVehicleController::class)
             ->where('parkingSpotUuid', self::UNIQUE_ID_PATTERN);
 
-        /** @uses  \App\Http\Controllers\UnparkVehicleController::__invoke */
-        $router->delete('/parking-spots/{parkingSpotUuid}/parkings', 'UnparkVehicleController')
+        $router->delete('/parking-spots/{parkingSpotUuid}/parkings', UnparkVehicleController::class)
             ->where('parkingSpotUuid', self::UNIQUE_ID_PATTERN);
 
-        /** @uses  \App\Http\Controllers\GetParkingLotController::__invoke */
-        $router->get('/parking-lots', 'GetParkingLotController');
+        $router->get('/parking-lots', GetParkingLotController::class);
     }
 }
