@@ -1,30 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Throwable;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
 
-class Handler extends ExceptionHandler
+class Handler extends \Illuminate\Foundation\Exceptions\Handler
 {
-    /**
-     * The list of the inputs that are never flashed to the session on validation exceptions.
-     *
-     * @var array<int, string>
-     */
-    protected $dontFlash = [
-        'current_password',
-        'password',
-        'password_confirmation',
-    ];
-
-    /**
-     * Register the exception handling callbacks for the application.
-     */
-    public function register(): void
+    protected function invalidJson($request, ValidationException $exception): JsonResponse
     {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
+        return response()->json([
+            'errors' => [
+                [
+                    'message' => $exception->getMessage(),
+                ],
+            ],
+        ], $exception->status);
     }
 }

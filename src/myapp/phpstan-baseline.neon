@@ -1,0 +1,277 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method App\\Exceptions\\BaseException\:\:debugResponse\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Exceptions/BaseException.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Exceptions/BaseException.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Routing\\ResponseFactory\|Illuminate\\Http\\Response\:\:json\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Exceptions/Handler.php
+
+		-
+			message: '#^Method App\\Http\\Middleware\\RedirectIfAuthenticated\:\:handle\(\) should return Symfony\\Component\\HttpFoundation\\Response but returns Illuminate\\Http\\RedirectResponse\|Illuminate\\Routing\\Redirector\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Middleware/RedirectIfAuthenticated.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Http/Request/JsonFormRequest.php
+
+		-
+			message: '#^Instantiated class App\\Exception\\ApiException not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Http/Request/JsonFormRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\JsonFormRequest\:\:validationData\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Request/JsonFormRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\JsonFormRequest\:\:validationData\(\) should return array but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Request/JsonFormRequest.php
+
+		-
+			message: '#^PHPDoc tag @throws with type App\\Exception\\ApiException is not subtype of Throwable$#'
+			identifier: throws.notThrowable
+			count: 1
+			path: app/Http/Request/JsonFormRequest.php
+
+		-
+			message: '#^Throwing object of an unknown class App\\Exception\\ApiException\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Http/Request/JsonFormRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\ListRequest\:\:all\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Request/ListRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\ListRequest\:\:getPerPage\(\) should return int but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Request/ListRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\ListRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Request/ListRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\ListRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Request/ListRequest.php
+
+		-
+			message: '#^Parameter \#2 \$default of method Illuminate\\Http\\Request\:\:query\(\) expects array\|string\|null, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Request/ListRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\ParkVehicleRequest\:\:getParkingSpotId\(\) should return string but returns object\|string\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Request/ParkVehicleRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\ParkVehicleRequest\:\:getType\(\) should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Request/ParkVehicleRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\ParkVehicleRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Request/ParkVehicleRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\ParkVehicleRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Request/ParkVehicleRequest.php
+
+		-
+			message: '#^Method App\\Http\\Request\\UnparkVehicleRequest\:\:getParkingSpotId\(\) should return string but returns object\|string\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Request/UnparkVehicleRequest.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Pagination\\LengthAwarePaginator\:\:getCollection\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Response/ResponseFactory.php
+
+		-
+			message: '#^Method App\\Http\\Response\\Transformer\\ParkingLotCollectionTransformer\:\:transform\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Response/Transformer/ParkingLotCollectionTransformer.php
+
+		-
+			message: '#^Method App\\Manager\\ParkingManager\:\:getModel\(\) should return App\\Models\\Parking but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Manager/ParkingManager.php
+
+		-
+			message: '#^Method App\\Manager\\VehicleManager\:\:getModel\(\) should return App\\Models\\Vehicle but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Manager/VehicleManager.php
+
+		-
+			message: '#^Parameter \#1 \$type of method App\\Models\\Vehicle\:\:setType\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Manager/VehicleManager.php
+
+		-
+			message: '#^Method App\\Models\\AbstractModel\:\:__call\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/AbstractModel.php
+
+		-
+			message: '#^Method App\\Models\\AbstractModel\:\:__construct\(\) has parameter \$attributes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/AbstractModel.php
+
+		-
+			message: '#^Method App\\Models\\AbstractModel\:\:getId\(\) should return int but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/AbstractModel.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Relations\\HasMany\:\:count\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/ParkingLot.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Relations\\HasMany\:\:where\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/ParkingLot.php
+
+		-
+			message: '#^Method App\\Models\\ParkingLot\:\:availableSpots\(\) should return Illuminate\\Database\\Eloquent\\Relations\\HasMany but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/ParkingLot.php
+
+		-
+			message: '#^Method App\\Models\\ParkingLot\:\:getAvailableSpotsCount\(\) should return int but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/ParkingLot.php
+
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: app/Providers/RepositoryServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$abstract of method Illuminate\\Contracts\\Container\\Container\:\:make\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Providers/RepositoryServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$abstract of method Illuminate\\Contracts\\Container\\Container\:\:singleton\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Providers/RepositoryServiceProvider.php
+
+		-
+			message: '#^Property App\\Providers\\RepositoryServiceProvider\:\:\$map has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: app/Providers/RepositoryServiceProvider.php
+
+		-
+			message: '#^Cannot access property \$id on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Providers/RouteServiceProvider.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:find\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Repository/BaseRepository.php
+
+		-
+			message: '#^Method App\\Repository\\BaseRepository\:\:find\(\) should return Illuminate\\Database\\Eloquent\\Model\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Repository/BaseRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ParkingRepository\:\:findByParkingSpotId\(\) should return App\\Models\\Parking\|null but returns object\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Repository/ParkingRepository.php
+
+		-
+			message: '#^PHPDoc tag @return with type Illuminate\\Database\\Eloquent\\Model\|null is not subtype of native type App\\Models\\Parking\|null\.$#'
+			identifier: return.phpDocType
+			count: 1
+			path: app/Repository/ParkingRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ParkingSpotRepository\:\:findByUniqueId\(\) should return App\\Models\\ParkingSpot\|null but returns object\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Repository/ParkingSpotRepository.php
+
+		-
+			message: '#^PHPDoc tag @return with type Illuminate\\Database\\Eloquent\\Model\|null is not subtype of native type App\\Models\\ParkingSpot\|null\.$#'
+			identifier: return.phpDocType
+			count: 1
+			path: app/Repository/ParkingSpotRepository.php
+
+		-
+			message: '#^Method App\\Repository\\VehicleRepository\:\:findByType\(\) should return App\\Models\\Vehicle\|null but returns object\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Repository/VehicleRepository.php
+
+		-
+			message: '#^PHPDoc tag @return with type Illuminate\\Database\\Eloquent\\Model\|null is not subtype of native type App\\Models\\Vehicle\|null\.$#'
+			identifier: return.phpDocType
+			count: 1
+			path: app/Repository/VehicleRepository.php
+
+		-
+			message: '#^Parameter \#1 \$parking of method App\\Manager\\ParkingManager\:\:unpark\(\) expects App\\Models\\Parking, App\\Models\\Parking\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Service/ParkingService.php
