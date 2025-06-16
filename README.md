@@ -1,7 +1,3 @@
-# Technical Interview Challenge 2
-
----
-
 ## 🚀 Quick Start
 
 ### Prerequisites
